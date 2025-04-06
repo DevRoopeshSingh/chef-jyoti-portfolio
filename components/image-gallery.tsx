@@ -66,7 +66,8 @@ export function ImageGallery() {
       category: "Vegetarian",
       description:
         "Farm-fresh vegetables marinated in a signature spice blend and grilled to perfection, highlighting seasonal produce.",
-      imageSrc: "/Spice-Rubbed-Grilled-Vegetables.png?height=600&width=800&text=5",
+      imageSrc:
+        "/Spice-Rubbed-Grilled-Vegetables.png?height=600&width=800&text=5",
     },
     {
       id: 6,
@@ -76,7 +77,91 @@ export function ImageGallery() {
         "Handcrafted breads paired with a selection of house-made chutneys, showcasing traditional techniques with a modern twist.",
       imageSrc: "/Artisanal-Bread-&-Chutneys.png?height=600&width=800&text=6",
     },
-  ]
+    {
+      id: 7,
+      title: "churros",
+      category: "churros",
+      description: "A small bowl of dark chocolate sauce for dipping.",
+      imageSrc: "/churros.jpg?height=600&width=800&text=7",
+    },
+    {
+      id: 8,
+      title: "Strawberry milkshake",
+      category: "strawberry milkshake",
+      description:
+        "The milkshake is served in a clear, paneled glass, showcasing its smooth, light pink color, indicative of blended strawberries.",
+      imageSrc: "/strawberry-milkshake.jpg?height=600&width=800&text=8",
+    },
+    {
+      id: 9,
+      title: "Appetizing Breakfast",
+      category: "appetizing breakfast",
+      description:
+        "This image presents a vibrant and appetizing breakfast or brunch spread, showcasing a trio of tempting sandwiches arranged in a bright and inviting setting.",
+      imageSrc: "/Appetizing-Breakfast.jpg?height=600&width=800&text=9",
+    },
+    {
+      id: 10,
+      title: "chocolate chip banana muffins",
+      category: "chocolate chip banana muffins",
+      description:
+        "The photograph features a close-up of three prominent chocolate chip banana muffins arranged on a rustic wooden surface covered with a striped kitchen towel.",
+      imageSrc:
+        "/chocolate-chip-banana-muffins.jpg?height=600&width=800&text=10",
+    },
+    {
+      id: 11,
+      title: "Egg Toast",
+      category: "Egg Toast",
+      description:
+        "The image features a plate of toast topped with hard-boiled eggs, cucumber, onion, and herbs.",
+      imageSrc: "/Egg-Toast.jpg?height=600&width=800&text=11",
+    },
+    {
+      id: 12,
+      title: "Caramel Biscoff Cookie Butter Iced Latte.",
+      category: "Caramel Biscoff Cookie Butter Iced Latte.",
+      description:
+        "A beautifully styled iced latte, heavily featuring the flavors of caramel and Biscoff cookies.",
+      imageSrc:
+        "/Caramel-Biscoff-Cookie-Butter-Iced-Latte.jpg?height=600&width=800&text=12",
+    },
+    {
+      id: 13,
+      title: "Blood Orange Turmeric Ginger Mocktail",
+      category: "Blood-Orange-Turmeric-Ginger-Mocktail",
+      description:
+        "A refreshing and visually appealing beverage, likely a mocktail, served in a clear, faceted glass filled with ice.",
+      imageSrc:
+        "/Blood-Orange-Turmeric-Ginger-Mocktail.jpg?height=600&width=800&text=13",
+    },
+    {
+      id: 14,
+      title: "Tropical Hibiscus Spritz Cocktail",
+      category: "Tropical Hibiscus Spritz Cocktail",
+      description:
+        "A refreshing and visually appealing cocktail, served in a stemless wine glass filled with crushed ice.",
+      imageSrc:
+        "/Tropical-Hibiscus-Spritz-Cocktail.jpg?height=600&width=800&text=14",
+    },
+    {
+      id: 15,
+      title: "Blood Orange Turmeric Ginger Mocktail",
+      category: "Blood Orange Turmeric Ginger Mocktail",
+      description:
+        "A faceted glass filled with ice, the drink displays a beautiful gradient of color.",
+      imageSrc:
+        "/Blood-Orange-Turmeric-Ginger-Mocktail.jpg?height=600&width=800&text=15",
+    },
+    {
+      id: 16,
+      title: "Cheesecakes",
+      category: "cheesecakes",
+      description:
+        "The cheesecakes are creamy and smooth, topped with a generous layer of fresh mango chunks and a sprig of mint for added freshness. A drizzle of mango puree adds a touch of sweetness and a vibrant color to the dessert.",
+      imageSrc: "/cheesecakes.jpg?height=600&width=800&text=16",
+    },
+  ];
 
   const handleItemClick = (item: GalleryItem, index: number) => {
     setSelectedImage(item)
