@@ -19,14 +19,15 @@ interface GalleryItem {
 }
 
 export function ImageGallery() {
-  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null)
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [touchStart, setTouchStart] = useState(0)
-  const [touchEnd, setTouchEnd] = useState(0)
-  const [isDialogOpen, setIsDialogOpen] = useState(false)
-  const isMobile = useMobile()
-  const galleryRef = useRef<HTMLDivElement>(null)
+  const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const isMobile = useMobile();
+  const galleryRef = useRef<HTMLDivElement>(null);
 
+  // constant gallery image
   const galleryItems: GalleryItem[] = [
     {
       id: 1,
@@ -164,61 +165,63 @@ export function ImageGallery() {
   ];
 
   const handleItemClick = (item: GalleryItem, index: number) => {
-    setSelectedImage(item)
-    setCurrentIndex(index)
-    setIsDialogOpen(true)
-  }
+    setSelectedImage(item);
+    setCurrentIndex(index);
+    setIsDialogOpen(true);
+  };
 
   const handlePrevious = () => {
-    const newIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length
-    setCurrentIndex(newIndex)
-    setSelectedImage(galleryItems[newIndex])
-  }
+    const newIndex =
+      (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    setCurrentIndex(newIndex);
+    setSelectedImage(galleryItems[newIndex]);
+  };
 
   const handleNext = () => {
-    const newIndex = (currentIndex + 1) % galleryItems.length
-    setCurrentIndex(newIndex)
-    setSelectedImage(galleryItems[newIndex])
-  }
+    const newIndex = (currentIndex + 1) % galleryItems.length;
+    setCurrentIndex(newIndex);
+    setSelectedImage(galleryItems[newIndex]);
+  };
 
   // Touch handlers for swipe gestures
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX)
-  }
+    setTouchStart(e.targetTouches[0].clientX);
+  };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX)
-  }
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
 
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
+    if (!touchStart || !touchEnd) return;
 
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > 50
-    const isRightSwipe = distance < -50
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
 
     if (isLeftSwipe) {
-      handleNext()
+      handleNext();
     }
 
     if (isRightSwipe) {
-      handlePrevious()
+      handlePrevious();
     }
 
     // Reset values
-    setTouchStart(0)
-    setTouchEnd(0)
-  }
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
   return (
     <>
-      <div ref={galleryRef} className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div
+        ref={galleryRef}
+        className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {galleryItems.map((item, index) => (
           <div
             key={item.id}
             className="group overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-xl cursor-pointer touch-manipulation"
-            onClick={() => handleItemClick(item, index)}
-          >
+            onClick={() => handleItemClick(item, index)}>
             <div className="relative h-56 sm:h-64 w-full overflow-hidden">
               <Image
                 src={item.imageSrc || "/placeholder.svg"}
@@ -233,11 +236,12 @@ export function ImageGallery() {
               <span className="mb-2 inline-block rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-800">
                 {item.category}
               </span>
-              <h3 className="mb-2 font-serif text-xl font-bold">{item.title}</h3>
+              <h3 className="mb-2 font-serif text-xl font-bold">
+                {item.title}
+              </h3>
               <button
                 className="text-amber-600 hover:text-amber-800 touch-target"
-                aria-label={`View details for ${item.title}`}
-              >
+                aria-label={`View details for ${item.title}`}>
                 View Details
               </button>
             </div>
@@ -252,15 +256,13 @@ export function ImageGallery() {
               className="relative"
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            >
+              onTouchEnd={handleTouchEnd}>
               <Button
                 variant="ghost"
                 size="icon"
                 className="absolute right-2 top-2 z-50 bg-black/20 hover:bg-black/40 rounded-full text-white touch-target"
                 onClick={() => setIsDialogOpen(false)}
-                aria-label="Close dialog"
-              >
+                aria-label="Close dialog">
                 <X className="h-5 w-5" />
               </Button>
 
@@ -281,12 +283,11 @@ export function ImageGallery() {
                       variant="ghost"
                       size="icon"
                       onClick={(e) => {
-                        e.stopPropagation()
-                        handlePrevious()
+                        e.stopPropagation();
+                        handlePrevious();
                       }}
                       className="h-10 w-10 rounded-full bg-black/20 hover:bg-black/40 text-white ml-2 touch-target"
-                      aria-label="Previous image"
-                    >
+                      aria-label="Previous image">
                       <ChevronLeft className="h-6 w-6" />
                     </Button>
                   </div>
@@ -296,12 +297,11 @@ export function ImageGallery() {
                       variant="ghost"
                       size="icon"
                       onClick={(e) => {
-                        e.stopPropagation()
-                        handleNext()
+                        e.stopPropagation();
+                        handleNext();
                       }}
                       className="h-10 w-10 rounded-full bg-black/20 hover:bg-black/40 text-white mr-2 touch-target"
-                      aria-label="Next image"
-                    >
+                      aria-label="Next image">
                       <ChevronRight className="h-6 w-6" />
                     </Button>
                   </div>
@@ -319,17 +319,20 @@ export function ImageGallery() {
                     <span className="mb-2 inline-block rounded-full bg-amber-100 px-3 py-1 text-sm font-medium text-amber-800">
                       {selectedImage.category}
                     </span>
-                    <h3 className="mb-4 font-serif text-2xl font-bold">{selectedImage.title}</h3>
-                    <p className="mb-6 text-gray-700">{selectedImage.description}</p>
+                    <h3 className="mb-4 font-serif text-2xl font-bold">
+                      {selectedImage.title}
+                    </h3>
+                    <p className="mb-6 text-gray-700">
+                      {selectedImage.description}
+                    </p>
                   </div>
                   <div className="mt-auto">
                     <Button
                       className="w-full bg-amber-600 hover:bg-amber-700 h-12 touch-target"
                       onClick={() => {
-                        setIsDialogOpen(false)
-                        window.location.href = "/booking"
-                      }}
-                    >
+                        setIsDialogOpen(false);
+                        window.location.href = "/booking";
+                      }}>
                       Request This Dish
                     </Button>
                   </div>
@@ -340,6 +343,6 @@ export function ImageGallery() {
         </DialogContent>
       </Dialog>
     </>
-  )
+  );
 }
 
