@@ -221,8 +221,9 @@ const recipes: Recipe[] = [
   }
 ]
 
-export default function RecipePage({ params }: { params: { slug: string } }) {
-  const recipe = recipes.find(r => r.id === params.slug)
+export default async function RecipePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const recipe = recipes.find(r => r.id === slug)
   
   if (!recipe) {
     return (
