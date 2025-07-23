@@ -22,25 +22,19 @@ export function PerformanceOptimizations() {
       return passive
     }
 
-    // Apply passive listeners to common events if supported
-    if (supportsPassive()) {
-      document.addEventListener("touchstart", () => {}, { passive: true })
-      document.addEventListener("touchmove", () => {}, { passive: true })
-      document.addEventListener("wheel", () => {}, { passive: true })
-    }
+    // Preload critical images
+    const preloadImages = [
+      "/Crafting-culinary-experiences.jpg", // Hero image
+      "/About-Chef-Jyoti.jpg", // About image
+    ]
 
-    // Preload critical images on mobile
-    if (window.innerWidth < 768) {
-      const preloadImages = [
-        "/placeholder.svg?height=1080&width=1920", // Hero image
-        "/placeholder.svg?height=800&width=600", // About image
-      ]
-
-      preloadImages.forEach((src) => {
-        const img = new Image()
-        img.src = src
-      })
-    }
+    preloadImages.forEach((src) => {
+      const link = document.createElement("link")
+      link.rel = "preload"
+      link.as = "image"
+      link.href = src
+      document.head.appendChild(link)
+    })
 
     // Implement intersection observer for lazy loading
     const lazyLoadImages = () => {

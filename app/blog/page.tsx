@@ -8,62 +8,62 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card"
 export default function BlogPage() {
   const blogPosts = [
     {
-      id: 1,
-      title: "The Art of Spice Blending: Creating Your Own Masalas",
+      id: "spice-journey-india",
+      title: "A Journey Through Indian Spices",
       excerpt:
-        "Learn how to create custom spice blends that will elevate your cooking and bring authentic Indian flavors to your kitchen.",
-      date: "April 2, 2023",
+        "Discover the art of spice blending and how different regions of India create unique flavor profiles.",
+      date: "January 15, 2024",
       category: "Techniques",
-      imageSrc: "/placeholder.svg?height=400&width=600&text=Spice+Blending",
+      imageSrc: "/Coastal-Curry-Selection.png",
       readTime: "8 min read",
     },
     {
-      id: 2,
-      title: "Regional Rice Dishes: Beyond Biryani",
+      id: "fusion-desserts-guide",
+      title: "Creating Fusion Desserts: East Meets West",
       excerpt:
-        "Explore the diverse world of Indian rice preparations, from the fragrant Pulao to the comforting Khichdi.",
-      date: "March 15, 2023",
-      category: "Recipes",
-      imageSrc: "/placeholder.svg?height=400&width=600&text=Rice+Dishes",
+        "Learn how to blend traditional Indian sweets with Western dessert techniques for innovative creations.",
+      date: "January 10, 2024",
+      category: "Innovation",
+      imageSrc: "/Fusion-Dessert-Platter.jpg",
       readTime: "6 min read",
     },
     {
-      id: 3,
-      title: "Food Styling Tips for Home Cooks",
+      id: "seasonal-cooking-tips",
+      title: "Seasonal Cooking: Making the Most of Fresh Ingredients",
       excerpt:
-        "Simple techniques to make your home-cooked meals look as good as they taste, using props and styling techniques from professional food photographers.",
-      date: "February 28, 2023",
-      category: "Food Styling",
-      imageSrc: "/placeholder.svg?height=400&width=600&text=Food+Styling",
-      readTime: "10 min read",
-    },
-    {
-      id: 4,
-      title: "Sustainable Cooking Practices in Modern Kitchens",
-      excerpt:
-        "How to reduce waste, source ingredients responsibly, and make environmentally conscious choices in your cooking.",
-      date: "February 10, 2023",
-      category: "Sustainability",
-      imageSrc: "/placeholder.svg?height=400&width=600&text=Sustainable+Cooking",
+        "Discover how to adapt your cooking to seasonal ingredients for maximum flavor and nutritional value.",
+      date: "January 5, 2024",
+      category: "Techniques",
+      imageSrc: "/Spice-Rubbed-Grilled-Vegetables.png",
       readTime: "7 min read",
     },
     {
+      id: 4,
+      title: "The Perfect Modern Thali Presentation",
+      excerpt:
+        "Learn how to present traditional Indian thali meals with modern plating techniques and visual appeal.",
+      date: "December 28, 2023",
+      category: "Food Styling",
+      imageSrc: "/Modern-Thali-Presentation.jpg",
+      readTime: "10 min read",
+    },
+    {
       id: 5,
-      title: "The Perfect Indian Dinner Party Menu",
-      excerpt: "Plan an impressive multi-course Indian meal with make-ahead tips and a complete shopping list.",
-      date: "January 25, 2023",
-      category: "Entertaining",
-      imageSrc: "/placeholder.svg?height=400&width=600&text=Dinner+Party",
+      title: "Artisanal Bread and Homemade Chutneys",
+      excerpt: "Master the art of making fresh bread and pairing it with traditional Indian chutneys and preserves.",
+      date: "December 20, 2023",
+      category: "Techniques",
+      imageSrc: "/Artisanal-Bread-&-Chutneys.png",
       readTime: "12 min read",
     },
     {
       id: 6,
-      title: "Cooking with Children: Indian Recipes for Family Fun",
+      title: "Breakfast Around the World: A Culinary Journey",
       excerpt:
-        "Kid-friendly Indian recipes that introduce young chefs to new flavors while creating memorable family experiences.",
-      date: "January 8, 2023",
-      category: "Family",
-      imageSrc: "/placeholder.svg?height=400&width=600&text=Cooking+with+Kids",
+        "Explore how different cultures start their day, from Indian parathas to continental breakfast spreads.",
+      date: "December 15, 2023",
+      category: "Culture",
+      imageSrc: "/appetizing-breakfast.jpg",
       readTime: "5 min read",
     },
   ]
@@ -81,7 +81,7 @@ export default function BlogPage() {
         <div className="relative mb-8 overflow-hidden rounded-xl">
           <div className="relative aspect-[21/9] w-full">
             <Image
-              src="/placeholder.svg?height=600&width=1200&text=Featured+Post"
+              src="/Saffron-Infused-Biryani.jpg"
               alt="Featured blog post"
               fill
               className="object-cover"
@@ -99,7 +99,9 @@ export default function BlogPage() {
               How traditional Indian cooking techniques and flavors are influencing contemporary fine dining around the
               world.
             </p>
-            <Button className="bg-white text-gray-900 hover:bg-gray-100">Read Article</Button>
+            <Link href="/blog/spice-journey-india">
+              <Button className="bg-white text-gray-900 hover:bg-gray-100">Read Article</Button>
+            </Link>
           </div>
         </div>
       </div>

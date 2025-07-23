@@ -31,20 +31,45 @@ export default function BookingPage() {
 
     setIsSubmitting(true)
 
-    // Simulate booking submission
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500))
+      const serviceName = services.find(s => s.id === serviceType)?.name || serviceType
+      
+      // Send booking request via email service
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || 'demo-key',
+          subject: `Chef Jyoti Booking Request: ${serviceName}`,
+          message: `New booking request:
+          
+Service: ${serviceName}
+Date: ${date.toDateString()}
+Time: ${timeSlot}
 
-      toast({
-        title: "Booking request sent!",
-        description: `Your ${serviceType} booking for ${date.toDateString()} at ${timeSlot} has been received.`,
+Please contact the client to confirm this booking and discuss details.`,
+          from_name: "Chef Jyoti Portfolio - Booking System",
+          to_email: "Jyotimaity3008@gmail.com"
+        })
       })
 
-      // Reset form
-      setDate(undefined)
-      setServiceType("")
-      setTimeSlot("")
+      if (response.ok) {
+        toast({
+          title: "Booking request sent!",
+          description: `Your ${serviceName} booking for ${date.toDateString()} at ${timeSlot} has been received. Chef Jyoti will contact you soon to confirm.`,
+        })
+
+        // Reset form
+        setDate(undefined)
+        setServiceType("")
+        setTimeSlot("")
+      } else {
+        throw new Error('Failed to send booking request')
+      }
     } catch (error) {
+      console.error('Booking form error:', error)
       toast({
         title: "Something went wrong",
         description: "Your booking couldn't be processed. Please try again later.",

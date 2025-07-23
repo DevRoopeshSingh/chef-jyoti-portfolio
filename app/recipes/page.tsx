@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { Clock, Users } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -16,70 +17,70 @@ export default function RecipesPage() {
 
   const recipes = [
     {
-      id: 1,
-      title: "Butter Chicken",
-      description: "Tender chicken in a rich, creamy tomato sauce with aromatic spices.",
-      prepTime: "30 min",
-      cookTime: "45 min",
-      servings: 4,
-      difficulty: "Medium",
-      category: "non-veg",
-      imageSrc: "/placeholder.svg?height=400&width=600&text=Butter+Chicken",
-    },
-    {
-      id: 2,
-      title: "Palak Paneer",
-      description: "Cottage cheese cubes in a smooth, spiced spinach gravy.",
-      prepTime: "20 min",
-      cookTime: "30 min",
-      servings: 4,
-      difficulty: "Easy",
-      category: "vegetarian",
-      imageSrc: "/placeholder.svg?height=400&width=600&text=Palak+Paneer",
-    },
-    {
-      id: 3,
-      title: "Naan Bread",
-      description: "Soft, fluffy flatbread perfect for scooping up curries and dals.",
-      prepTime: "1 hour",
-      cookTime: "15 min",
+      id: "saffron-biryani",
+      title: "Saffron-Infused Chicken Biryani",
+      description: "A royal and aromatic biryani with tender chicken, fragrant basmati rice, and the luxurious touch of saffron.",
+      prepTime: "45 min",
+      cookTime: "1 hour",
       servings: 6,
       difficulty: "Medium",
-      category: "breads",
-      imageSrc: "/placeholder.svg?height=400&width=600&text=Naan+Bread",
+      category: "non-veg",
+      imageSrc: "/Saffron-Infused-Biryani.jpg",
+    },
+    {
+      id: "fusion-dessert-platter",
+      title: "Indo-French Fusion Dessert Platter",
+      description: "An elegant dessert platter combining Indian flavors with French pastry techniques.",
+      prepTime: "2 hours",
+      cookTime: "1 hour",
+      servings: 8,
+      difficulty: "Hard",
+      category: "desserts",
+      imageSrc: "/Fusion-Dessert-Platter.jpg",
+    },
+    {
+      id: "coastal-curry",
+      title: "Coastal Coconut Fish Curry",
+      description: "A vibrant fish curry inspired by coastal India, with coconut milk and curry leaves.",
+      prepTime: "20 min",
+      cookTime: "25 min",
+      servings: 4,
+      difficulty: "Easy",
+      category: "non-veg",
+      imageSrc: "/Coastal-Curry-Selection.png",
     },
     {
       id: 4,
-      title: "Gulab Jamun",
-      description: "Soft milk solids dumplings soaked in aromatic sugar syrup.",
-      prepTime: "30 min",
-      cookTime: "20 min",
-      servings: 8,
+      title: "Artisanal Bread with Chutneys",
+      description: "Fresh homemade bread paired with traditional Indian chutneys and preserves.",
+      prepTime: "2 hours",
+      cookTime: "45 min",
+      servings: 6,
       difficulty: "Medium",
-      category: "desserts",
-      imageSrc: "/placeholder.svg?height=400&width=600&text=Gulab+Jamun",
+      category: "breads",
+      imageSrc: "/Artisanal-Bread-&-Chutneys.png",
     },
     {
       id: 5,
-      title: "Chana Masala",
-      description: "Spiced chickpeas in a tangy tomato sauce, a popular street food.",
-      prepTime: "15 min",
-      cookTime: "30 min",
-      servings: 4,
-      difficulty: "Easy",
+      title: "Modern Thali Presentation",
+      description: "Traditional Indian thali meal with contemporary plating and presentation techniques.",
+      prepTime: "1 hour",
+      cookTime: "1.5 hours",
+      servings: 2,
+      difficulty: "Medium",
       category: "vegetarian",
-      imageSrc: "/placeholder.svg?height=400&width=600&text=Chana+Masala",
+      imageSrc: "/Modern-Thali-Presentation.jpg",
     },
     {
       id: 6,
-      title: "Tandoori Chicken",
-      description: "Chicken marinated in yogurt and spices, traditionally cooked in a clay oven.",
-      prepTime: "4 hours",
-      cookTime: "40 min",
+      title: "Spice-Rubbed Grilled Vegetables",
+      description: "Seasonal vegetables marinated in aromatic spices and perfectly grilled.",
+      prepTime: "30 min",
+      cookTime: "20 min",
       servings: 4,
-      difficulty: "Medium",
-      category: "non-veg",
-      imageSrc: "/placeholder.svg?height=400&width=600&text=Tandoori+Chicken",
+      difficulty: "Easy",
+      category: "vegetarian",
+      imageSrc: "/Spice-Rubbed-Grilled-Vegetables.png",
     },
   ]
 
@@ -137,7 +138,9 @@ export default function RecipesPage() {
                       </div>
                     </CardContent>
                     <CardFooter className="border-t p-6 pt-4">
-                      <Button className="w-full bg-amber-600 hover:bg-amber-700">View Recipe</Button>
+                      <Link href={`/recipes/${recipe.id}`} className="w-full">
+                        <Button className="w-full bg-amber-600 hover:bg-amber-700">View Recipe</Button>
+                      </Link>
                     </CardFooter>
                   </Card>
                 ))}

@@ -3,11 +3,11 @@ import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react"
 
 export function SocialLinks() {
   const socialLinks = [
-    { icon: <Instagram className="h-5 w-5" />, href: "#", label: "Instagram" },
-    { icon: <Facebook className="h-5 w-5" />, href: "#", label: "Facebook" },
-    { icon: <Twitter className="h-5 w-5" />, href: "#", label: "Twitter" },
-    { icon: <Youtube className="h-5 w-5" />, href: "#", label: "YouTube" },
-    { icon: <Linkedin className="h-5 w-5" />, href: "#", label: "LinkedIn" },
+    { icon: <Instagram className="h-5 w-5" />, href: "https://instagram.com/chef_jyoti", label: "Instagram" },
+    { icon: <Facebook className="h-5 w-5" />, href: "https://facebook.com/chefjyoti", label: "Facebook" },
+    { icon: <Twitter className="h-5 w-5" />, href: "https://twitter.com/chef_jyoti", label: "Twitter" },
+    { icon: <Youtube className="h-5 w-5" />, href: "https://youtube.com/@chefjyoti", label: "YouTube" },
+    { icon: <Linkedin className="h-5 w-5" />, href: "https://linkedin.com/in/jyoti-chef", label: "LinkedIn" },
   ]
 
   return (

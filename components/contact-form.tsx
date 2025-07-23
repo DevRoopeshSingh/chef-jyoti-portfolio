@@ -25,24 +25,42 @@ export function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
     try {
-      // In a real application, you would send this data to your backend
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. Chef Jyoti will get back to you soon.",
+      // Send form data via email service (using Web3Forms or similar service)
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || 'demo-key',
+          name: formData.name,
+          email: formData.email,
+          subject: `Chef Jyoti Portfolio Contact: ${formData.subject}`,
+          message: `Name: ${formData.name}\nEmail: ${formData.email}\nSubject: ${formData.subject}\n\nMessage:\n${formData.message}`,
+          from_name: "Chef Jyoti Portfolio",
+          to_email: "Jyotimaity3008@gmail.com"
+        })
       })
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      })
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. Chef Jyoti will get back to you soon.",
+        })
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        })
+      } else {
+        throw new Error('Failed to send message')
+      }
     } catch (error) {
+      console.error('Contact form error:', error)
       toast({
         title: "Something went wrong",
         description: "Your message couldn't be sent. Please try again later.",

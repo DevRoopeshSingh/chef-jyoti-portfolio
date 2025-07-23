@@ -35,7 +35,7 @@ export function ImageGallery() {
       category: "Signature Dish",
       description:
         "A fragrant rice dish layered with aromatic spices, tender meat, and caramelized onions, finished with a touch of saffron.",
-      imageSrc: "/Saffron-Infused-Biryani.jpg?height=600&width=800&text=1",
+      imageSrc: "/Saffron-Infused-Biryani.jpg",
     },
     {
       id: 2,
@@ -43,7 +43,7 @@ export function ImageGallery() {
       category: "Food Styling",
       description:
         "A contemporary take on the traditional Indian thali, featuring a curated selection of dishes presented with artistic flair.",
-      imageSrc: "/Modern-Thali-Presentation.jpg?height=600&width=800&text=2",
+      imageSrc: "/Modern-Thali-Presentation.jpg",
     },
     {
       id: 3,
@@ -51,7 +51,7 @@ export function ImageGallery() {
       category: "Innovation",
       description:
         "A creative blend of Indian and Western dessert techniques, combining traditional flavors with modern presentation.",
-      imageSrc: "/Fusion-Dessert-Platter.jpg?height=600&width=800&text=3",
+      imageSrc: "/Fusion-Dessert-Platter.jpg",
     },
     {
       id: 4,
@@ -59,7 +59,7 @@ export function ImageGallery() {
       category: "Regional Cuisine",
       description:
         "A showcase of India's diverse coastal flavors, featuring seafood preparations from Kerala, Goa, and Bengal.",
-      imageSrc: "/Coastal-Curry-Selection.png?height=600&width=800&text=4",
+      imageSrc: "/Coastal-Curry-Selection.png",
     },
     {
       id: 5,
@@ -67,8 +67,7 @@ export function ImageGallery() {
       category: "Vegetarian",
       description:
         "Farm-fresh vegetables marinated in a signature spice blend and grilled to perfection, highlighting seasonal produce.",
-      imageSrc:
-        "/Spice-Rubbed-Grilled-Vegetables.png?height=600&width=800&text=5",
+      imageSrc: "/Spice-Rubbed-Grilled-Vegetables.png",
     },
     {
       id: 6,
@@ -76,14 +75,14 @@ export function ImageGallery() {
       category: "Accompaniments",
       description:
         "Handcrafted breads paired with a selection of house-made chutneys, showcasing traditional techniques with a modern twist.",
-      imageSrc: "/Artisanal-Bread-&-Chutneys.png?height=600&width=800&text=6",
+      imageSrc: "/Artisanal-Bread-&-Chutneys.png",
     },
     {
       id: 7,
       title: "churros",
       category: "churros",
       description: "A small bowl of dark chocolate sauce for dipping.",
-      imageSrc: "/churros.jpg?height=600&width=800&text=7",
+      imageSrc: "/churros.jpg",
     },
     {
       id: 8,
@@ -91,7 +90,7 @@ export function ImageGallery() {
       category: "strawberry milkshake",
       description:
         "The milkshake is served in a clear, paneled glass, showcasing its smooth, light pink color, indicative of blended strawberries.",
-      imageSrc: "/strawberry-milkshake.jpg?height=600&width=800&text=8",
+      imageSrc: "/strawberry-milkshake.jpg",
     },
     {
       id: 9,
@@ -99,7 +98,7 @@ export function ImageGallery() {
       category: "appetizing breakfast",
       description:
         "This image presents a vibrant and appetizing breakfast or brunch spread, showcasing a trio of tempting sandwiches arranged in a bright and inviting setting.",
-      imageSrc: "/Appetizing-Breakfast.jpg?height=600&width=800&text=9",
+      imageSrc: "/appetizing-breakfast.jpg",
     },
     {
       id: 10,
@@ -107,8 +106,7 @@ export function ImageGallery() {
       category: "chocolate chip banana muffins",
       description:
         "The photograph features a close-up of three prominent chocolate chip banana muffins arranged on a rustic wooden surface covered with a striped kitchen towel.",
-      imageSrc:
-        "/chocolate-chip-banana-muffins.jpg?height=600&width=800&text=10",
+      imageSrc: "/chocolate-chip-banana-muffins.jpg",
     },
     {
       id: 11,
@@ -116,7 +114,7 @@ export function ImageGallery() {
       category: "Egg Toast",
       description:
         "The image features a plate of toast topped with hard-boiled eggs, cucumber, onion, and herbs.",
-      imageSrc: "/Egg-Toast.jpg?height=600&width=800&text=11",
+      imageSrc: "/Egg-Toast.jpg",
     },
     {
       id: 12,
@@ -124,8 +122,7 @@ export function ImageGallery() {
       category: "Caramel Biscoff Cookie Butter Iced Latte.",
       description:
         "A beautifully styled iced latte, heavily featuring the flavors of caramel and Biscoff cookies.",
-      imageSrc:
-        "/Caramel-Biscoff-Cookie-Butter-Iced-Latte.jpg?height=600&width=800&text=12",
+      imageSrc: "/Caramel-Biscoff-Cookie-Butter-Iced-Latte.jpg",
     },
     {
       id: 13,
@@ -133,8 +130,7 @@ export function ImageGallery() {
       category: "Blood-Orange-Turmeric-Ginger-Mocktail",
       description:
         "A refreshing and visually appealing beverage, likely a mocktail, served in a clear, faceted glass filled with ice.",
-      imageSrc:
-        "/Blood-Orange-Turmeric-Ginger-Mocktail.jpg?height=600&width=800&text=13",
+      imageSrc: "/Blood-Orange-Turmeric-Ginger-Mocktail.jpg",
     },
     {
       id: 14,
@@ -142,17 +138,7 @@ export function ImageGallery() {
       category: "Tropical Hibiscus Spritz Cocktail",
       description:
         "A refreshing and visually appealing cocktail, served in a stemless wine glass filled with crushed ice.",
-      imageSrc:
-        "/Tropical-Hibiscus-Spritz-Cocktail.jpg?height=600&width=800&text=14",
-    },
-    {
-      id: 15,
-      title: "Blood Orange Turmeric Ginger Mocktail",
-      category: "Blood Orange Turmeric Ginger Mocktail",
-      description:
-        "A faceted glass filled with ice, the drink displays a beautiful gradient of color.",
-      imageSrc:
-        "/Blood-Orange-Turmeric-Ginger-Mocktail.jpg?height=600&width=800&text=15",
+      imageSrc: "/Tropical-Hibiscus-Spritz-Cocktail.jpg",
     },
     {
       id: 16,
@@ -160,7 +146,7 @@ export function ImageGallery() {
       category: "cheesecakes",
       description:
         "The cheesecakes are creamy and smooth, topped with a generous layer of fresh mango chunks and a sprig of mint for added freshness. A drizzle of mango puree adds a touch of sweetness and a vibrant color to the dessert.",
-      imageSrc: "/cheesecakes.jpg?height=600&width=800&text=16",
+      imageSrc: "/cheesecakes.jpg",
     },
   ];
 
